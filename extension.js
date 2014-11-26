@@ -32,15 +32,26 @@
 
          */
 
-        bot.commands.baconCommand = {
-            command: 'botwoot',  //The command to be called. With the standard command literal this would be: !bacon
+        bot.commands.treeCommand = {
+            command: 'tree',  //The command to be called. With the standard command literal this would be: !bacon
             rank: 'user', //Minimum user permission to use the command
             type: 'exact', //Specify if it can accept variables or not (if so, these have to be handled yourself through the chat.message
             functionality: function (chat, cmd) {
+                var randomnumber=Math.floor(Math.random()*6)
                 if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                 if (!bot.commands.executable(this.rank, chat)) return void (0);
                 else {
-                    $("#woot").click();
+                    if(randomnumber === 1){
+                        API.sendChat("Trees are just really cool. What can I say? 10/10 would fuck.");
+                    }else if(randomnumber === 2){
+                        API.sendChat("This room supports tree rubbing!");
+                    }else if(randomnumber === 3){
+                        API.sendChat("This room contains a wide range of trees, from oak to palm. What tree will you discover?");
+                    }else if(randomnumber === 4){
+                        API.sendChat("lol u wanna know about trees? kys m80");
+                    }else{
+                        API.sendChat("trees... swag..... 420 blaze it..");
+                    }
                 }
             }
         };
@@ -105,6 +116,6 @@
     }));
 
     //Start the bot and extend it when it has loaded.
-    $.getScript('https://rawgit.com/Yemasthui/basicBot/master/basicBot.js', extend);
+    $.getScript('https://raw.githubusercontent.com/XDdrummer/basicBot/master/basicBot3.js', extend);
 
 }).call(this);
