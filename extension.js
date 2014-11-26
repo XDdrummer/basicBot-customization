@@ -116,6 +116,6 @@
     }));
 
     //Start the bot and extend it when it has loaded.
-    $.getScript('https://raw.githubusercontent.com/XDdrummer/basicBot/master/basicBot3.js', extend);
+    $.getScript('https://rawgit.com/XDdrummer/basicBot/master/basicBot3.js', extend);
 
 }).call(this);
